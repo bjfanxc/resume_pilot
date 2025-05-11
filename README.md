@@ -1,4 +1,21 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resume Pilot
+
+Resume Pilot 是一个基于 AI 的简历生成工具，使用 Next.js 和 OpenAI API 构建。
+
+## 功能特点
+
+- 智能简历生成
+- 响应式设计
+- 简单易用的界面
+- AI 驱动的内容优化
+
+## 开始使用
+
+1. 克隆项目
+2. 安装依赖：
+   ```bash
+   npm install
+   ```
 
 ## Getting Started
 
