@@ -1,3 +1,5 @@
+import ReactMarkdown from 'react-markdown';
+
 interface ResumeResultProps {
   resume: string
 }
@@ -6,7 +8,9 @@ export default function ResumeResult({ resume }: ResumeResultProps) {
   return (
     <div className="max-w-4xl mx-auto">
       <div className="bg-white shadow rounded-lg p-6">
-        <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: resume }} />
+        <div className="prose max-w-none">
+          <ReactMarkdown>{resume}</ReactMarkdown>
+        </div>
         
         <div className="mt-6 flex justify-end space-x-4">
           <button
