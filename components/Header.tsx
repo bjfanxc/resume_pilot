@@ -12,16 +12,26 @@ export default function Header() {
             Resume Pilot
           </Link>
           
-          <div className="space-x-6">
-            <Link 
+          <div className="space-x-4 md:space-x-6">
+            <Link
               href="/generate"
-              className={`${router.pathname === '/generate' ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`}
+              className={`px-4 py-2 rounded-md transition-colors font-medium
+                ${router.pathname === '/generate' 
+                  ? 'bg-blue-600 text-white shadow-sm' 
+                  : 'text-blue-600 border border-blue-500 hover:bg-blue-500 hover:text-white'
+                }
+              `}
             >
               生成简历
             </Link>
-            <Link 
+            <Link
               href="/about"
-              className={`${router.pathname === '/about' ? 'text-blue-600' : 'text-gray-600'} hover:text-blue-800`}
+              className={`px-4 py-2 rounded-md transition-colors font-medium
+                ${router.pathname === '/about' 
+                  ? 'bg-blue-600 text-white shadow-sm' 
+                  : 'text-blue-600 border border-blue-500 hover:bg-blue-500 hover:text-white'
+                }
+              `}
             >
               关于我们
             </Link>

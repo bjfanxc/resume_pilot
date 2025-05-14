@@ -13,13 +13,13 @@ export default function Home() {
 
       <Header />
       
-      <main className="flex-grow container mx-auto px-4 py-8">
+      <main className="flex-grow container mx-auto px-4 py-16 md:py-20">
         <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">欢迎使用 Resume Pilot</h1>
-          <p className="text-xl mb-8">使用AI技术，让简历制作变得简单高效</p>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">欢迎使用 Resume Pilot</h1>
+          <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-10">使用AI技术，让简历制作变得简单高效</p>
           <Link 
             href="/generate" 
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="bg-blue-600 text-white px-10 py-4 rounded-lg hover:bg-blue-700 transition-colors text-lg font-semibold shadow-md hover:shadow-lg"
           >
             开始制作简历
           </Link>
