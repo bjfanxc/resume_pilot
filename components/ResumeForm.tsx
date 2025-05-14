@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect, Dispatch, SetStateAction } from 'react';
 import { sendMessage, Message } from '../lib/dify';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 // 扩展 Message 类型以包含 'thinking' 角色
 type AppMessage = Message | { role: 'thinking'; content: string };
@@ -101,7 +103,7 @@ export default function ResumeForm({ onGenerate }: ResumeFormProps) {
                 <div className="rounded-lg px-4 py-2 max-w-[80%] bg-yellow-50 text-gray-700 border border-yellow-200">
                   <div className="flex items-start">
                     <span className="mr-2 mt-1">🤔</span>
-                    <div className="whitespace-pre-wrap">{message.content}</div>
+                    <div className="whitespace-pre-wrap text-sm">{message.content}</div>
                   </div>
                 </div>
               </div>
@@ -110,12 +112,12 @@ export default function ResumeForm({ onGenerate }: ResumeFormProps) {
           return (
             <div
               key={index}
-              className={`flex ${message.role === 'assistant' ? 'justify-start' : 'justify-end'}`}
+              className={`flex ${message.role === 'assistant' ? 'justify-start' : 'justify-end'} mb-2`}
             >
               <div
-                className={`rounded-lg px-4 py-2 max-w-[80%] ${message.role === 'assistant' ? 'bg-gray-100' : 'bg-blue-600 text-white'}`}
+                className={`rounded-lg px-4 py-2 max-w-[80%] ${message.role === 'assistant' ? 'bg-gray-100 dark:bg-gray-700 prose dark:prose-invert max-w-none' : 'bg-blue-600 text-white prose prose-invert max-w-none'}`}
               >
-                <div className="whitespace-pre-wrap">{message.content}</div>
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>{message.content}</ReactMarkdown>
               </div>
             </div>
           );
