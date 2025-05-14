@@ -3,7 +3,7 @@ import type { AppProps } from 'next/app'
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 font-custom">
       <Component {...pageProps} />
     </div>
   )
